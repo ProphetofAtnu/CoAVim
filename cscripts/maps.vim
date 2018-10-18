@@ -12,5 +12,3 @@ nnoremap <silent> <Leader>V :set virtualedit-=all<cr>
 nnoremap gb :bnext<cr>
 nnoremap gB :bprev<cr>
 
-"Custom Commands
-command! Notes Explore scp://cultofatnu.org/notes/

@@ -13,6 +13,8 @@ set directory=~/.vim/swp//
 set backupdir=~/.vim/backup//
 call plug#begin("~/.vim/plugged")
 
+Plug 'tpope/vim-vinegar'
+Plug 'othree/jspc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'afshinm/npm.vim'
 Plug 'ap/vim-buftabline'
@@ -25,25 +27,37 @@ Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'gyim/vim-boxdraw'
 Plug 'isRuslan/vim-es6'
-Plug 'junegunn/fzf'
 Plug 'justinmk/vim-sneak'
 Plug 'moll/vim-node'
 Plug 'myhere/vim-nodejs-complete'
 Plug 'mtth/scratch.vim'
-Plug 'pangloss/vim-javascript'
+"Plug 'pangloss/vim-javascript'
 Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'tpope/vim-sensible'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'roxma/nvim-yarp'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install -g',
   \ 'for': ['neovim', 'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
 
+Plug 'junegunn/fzf'
 call plug#end()
-"
+
+
 "For Jedi and other autocomplete functions
 set completeopt-=preview
+
+set hidden
+
+let g:LanguageClient_serverCommands = {
+  \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+  \}
 
 "For SuperTab
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
@@ -58,5 +72,9 @@ let g:session_autosave = 'no'
 "My stuff
 execute "so ". expand("<sfile>:p:h") . "/cscripts/settings.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/maps.vim"
+execute "so ". expand("<sfile>:p:h") . "/cscripts/commands.vim"
+
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
+"vim-javascript
+let g:javascript_plugin_jsdoc = 1
