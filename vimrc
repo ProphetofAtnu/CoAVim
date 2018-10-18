@@ -56,7 +56,7 @@ set completeopt-=preview
 set hidden
 
 let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['/usr/bin/javascript-typescript-stdio'],
+  \ 'javascript': ['javascript-typescript-stdio'],
   \}
 
 "For SuperTab

@@ -20,3 +20,6 @@ endfunction
 command! Notes exec "Explore " . g:Notes_Directory
 command! -nargs=1 NewNote call CreateNote(<f-args>)
 command! NotesIndex exec "helptags " . g:Notes_Directory"
+
+"For settings
+command! Vimscripts exec "Exp " . fnamemodify($MYVIMRC, ':h')
