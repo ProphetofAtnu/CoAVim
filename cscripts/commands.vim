@@ -20,6 +20,7 @@ endfunction
 command! Notes exec "Exp " . expand(g:Notes_Directory)
 command! -nargs=1 NewNote call CreateNote(<f-args>)
 command! NotesIndex exec "helptags " . expand(g:Notes_Directory)
+command! -nargs=1 NoteSearch exec "vimgrep " . <q-args> ." ". expand(g:Notes_Directory) . "/*"
 
 "For settings
-command! Vimscripts exec "Exp " . fnamemodify($MYVIMRC, ':h')
+command! VimScripts exec "Exp " . fnamemodify($MYVIMRC, ':h')
