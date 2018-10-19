@@ -74,6 +74,8 @@ execute "so ". expand("<sfile>:p:h") . "/cscripts/settings.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/maps.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/commands.vim"
 
+"Test
+
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 "vim-javascript
