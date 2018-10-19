@@ -1,9 +1,9 @@
 " Writing notes
-let g:Notes_Directory = "~/Documents/Notes"
+let g:Notes_Directory = "~/Documents/Notes/"
 
 function! CreateNote(name)
   let nname=a:name
-  let path = g:Notes_Directory . "/" . nname . ".txt"
+  let path = g:Notes_Directory . nname . ".txt"
   let vdirectives = "vim:ft=help"
   if filereadable(path)
     exec "e " . path
@@ -17,9 +17,9 @@ function! CreateNote(name)
   endif
 endfunction
 
-command! Notes exec "Explore " . g:Notes_Directory
+command! Notes exec "Exp " . expand(g:Notes_Directory)
 command! -nargs=1 NewNote call CreateNote(<f-args>)
-command! NotesIndex exec "helptags " . g:Notes_Directory"
+command! NotesIndex exec "helptags " . expand(g:Notes_Directory)
 
 "For settings
 command! Vimscripts exec "Exp " . fnamemodify($MYVIMRC, ':h')

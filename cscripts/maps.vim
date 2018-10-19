@@ -8,6 +8,8 @@ nnoremap <silent> <Leader>B :bp\|bd # <cr>
 nnoremap <silent> <Leader>v :set virtualedit+=all<cr>
 nnoremap <silent> <Leader>V :set virtualedit-=all<cr>
 
+"Insert Mode Maps
+inoremap <S-Tab> <C-V><Tab>
 "Map buffer commands to g
 nnoremap gb :bnext<cr>
 nnoremap gB :bprev<cr>
