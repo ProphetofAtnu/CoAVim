@@ -7,6 +7,7 @@ colorscheme dracula
 set hidden
 set number
 set relativenumber
+set modeline
 
 "netrw variables
 let g:netrw_banner = 0
