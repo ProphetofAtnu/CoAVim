@@ -21,3 +21,5 @@ inoremap <S-Tab> <C-V><Tab>
 nnoremap gb :bnext<cr>
 nnoremap gB :bprev<cr>
 
+"Go to url
+nnoremap gl viW"iy :OpenInBrowser <C-R>i <cr>
