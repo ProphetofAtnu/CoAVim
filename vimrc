@@ -75,8 +75,6 @@ execute "so ". expand("<sfile>:p:h") . "/cscripts/settings.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/maps.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/commands.vim"
 
-"Test
-
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 "vim-javascript
@@ -84,3 +82,7 @@ let g:javascript_plugin_jsdoc = 1
 
 "Airline
 let g:airline_powerline_fonts = 1
+
+if has('win32') 
+  set ttyscroll=0
+endif
