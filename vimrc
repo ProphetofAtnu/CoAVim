@@ -57,7 +57,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
   \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'go': ['/home/jacsc/go/bin/go-langserver'],
+  \ 'go': ['go-langserver'],
   \}
 
 "For SuperTab
@@ -85,4 +85,5 @@ let g:airline_powerline_fonts = 1
 
 if has('win32') 
   set ttyscroll=0
+  colorscheme default
 endif
