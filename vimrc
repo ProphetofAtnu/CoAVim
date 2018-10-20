@@ -57,6 +57,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
   \ 'javascript': ['javascript-typescript-stdio'],
+  \ 'go': ['/home/jacsc/go/bin/go-langserver'],
   \}
 
 "For SuperTab
