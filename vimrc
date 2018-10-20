@@ -13,6 +13,8 @@ set directory=~/.vim/swp//
 set backupdir=~/.vim/backup//
 call plug#begin("~/.vim/plugged")
 
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-vinegar'
 Plug 'othree/jspc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -78,3 +80,6 @@ execute "so ". expand("<sfile>:p:h") . "/cscripts/commands.vim"
 let g:deoplete#enable_at_startup = 1
 "vim-javascript
 let g:javascript_plugin_jsdoc = 1
+
+"Airline
+let g:airline_powerline_fonts = 1
