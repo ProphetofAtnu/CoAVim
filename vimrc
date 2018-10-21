@@ -8,13 +8,21 @@ if !isdirectory($HOME."/.vim/backup")
     call mkdir($HOME."/.vim/backup", "p")
 endif
 
+if has('win32') 
+  set ttyscroll=0
+  let g:python3_host_prog="C:/Python37/python.exe"
+  set noeb vb t_vb=
+endif
+
 set undodir=~/.vim/undo//
 set directory=~/.vim/swp//
 set backupdir=~/.vim/backup//
+
 call plug#begin("~/.vim/plugged")
 
+Plug 'PProvost/vim-ps1'
+Plug 'itchyny/lightline.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-vinegar'
 Plug 'othree/jspc.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -80,10 +88,3 @@ let g:deoplete#enable_at_startup = 1
 "vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
-"Airline
-let g:airline_powerline_fonts = 1
-
-if has('win32') 
-  set ttyscroll=0
-  colorscheme default
-endif

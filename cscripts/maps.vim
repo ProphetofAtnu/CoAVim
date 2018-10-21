@@ -4,7 +4,9 @@ nnoremap <silent> <Leader>q :help quickref<CR>
 nnoremap <silent> <Leader>r :VimScripts<cr>
 nnoremap <silent> <Leader>R :e $MYVIMRC<cr>
 nnoremap <Leader>z :vertical resize 
-nnoremap <Leader>t :below terminal powershell.exe<cr>
+if has('win32')
+  nnoremap <Leader>t :terminal ++curwin powershell.exe <cr>
+endif
 nnoremap <silent> <Leader>B :bp\|bd # <cr>
 nnoremap <silent> <Leader>v :set virtualedit+=all<cr>
 nnoremap <silent> <Leader>V :set virtualedit-=all<cr>
