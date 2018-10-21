@@ -14,6 +14,11 @@ if has('win32')
   set noeb vb t_vb=
 endif
 
+if has('unix')
+  set guicursor=
+" Workaround some broken plugins which set guicursor indiscriminately.
+  autocmd OptionSet guicursor noautocmd set guicursor=
+endif
 set undodir=~/.vim/undo//
 set directory=~/.vim/swp//
 set backupdir=~/.vim/backup//
@@ -25,7 +30,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'tpope/vim-vinegar'
 Plug 'othree/jspc.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'afshinm/npm.vim'
 Plug 'ap/vim-buftabline'
 Plug 'chrisbra/csv.vim'
@@ -65,7 +69,7 @@ set hidden
 
 let g:LanguageClient_serverCommands = {
   \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'go': ['go-langserver'],
+  \ 'sh': ['bash-language-server', 'start']
   \}
 
 "For SuperTab
@@ -79,12 +83,13 @@ let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 
 "My stuff
+execute "so ". expand("<sfile>:p:h") . "/cscripts/functions.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/settings.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/maps.vim"
 execute "so ". expand("<sfile>:p:h") . "/cscripts/commands.vim"
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
 "vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
+"fzv
+noremap <Leader>f :FZF<cr>
