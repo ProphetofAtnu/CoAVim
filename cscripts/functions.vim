@@ -1,6 +1,8 @@
 " Writing notes
 let g:Notes_Directory = "~/Documents/Notes/"
 let g:webbrowser = "firefox"
+let g:Notes_Updater = "~/Documents/Notes/bin/update.sh"
+let g:Notes_Indexer= "~/Documents/Notes/bin/IndexGen.py"
 
 function! CreateNote(name)
   let nname=a:name
@@ -17,6 +19,16 @@ function! CreateNote(name)
     :set ft=help
   endif
 endfunction
+
+function! NotesUpdate()
+  :exec "!".g:Notes_Updater  
+endfunction
+
+function! NotesIndex()
+  :exec "!" . g:Notes_Indexer
+  :exec "helptags " . g:Notes_Directory
+
+endfunc
 
 function! OpenInBrowser(ln)
   let link=a:ln

@@ -25,6 +25,8 @@ set backupdir=~/.vim/backup//
 
 call plug#begin("~/.vim/plugged")
 
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'PProvost/vim-ps1'
 Plug 'itchyny/lightline.vim'
 Plug 'vim-ctrlspace/vim-ctrlspace'
